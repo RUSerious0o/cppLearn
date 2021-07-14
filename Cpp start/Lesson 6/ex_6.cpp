@@ -20,12 +20,22 @@ int main(int argc, char ** argv) {
 	createFile(fileNames[1]);
 	
 	// 6.2
-	concatFiles(fileNames[2], 2, fileNames[0], fileNames[1]);
+	//concatFiles(fileNames[2], 2, fileNames[0], fileNames[1]);
+	// Я ХЗ ПОЧЕМУ ЭТО НЕ СРАБОТАЛО С ПЕРВОГО РАЗА!!!
+	ifstream f1(fileNames[0], ifstream::in);
+	ifstream f2(fileNames[1], ifstream::in);
+	ofstream f3(fileNames[2], ofstream::out);
+	f3 << f1.rdbuf() << f2.rdbuf();
+	f1.close();
+	f2.close();
+	f3.close();
 	
 	// 6.3
-	if(argc < 3) return 0;
+	cout << findWord("powerless", "text.txt") << "\n"
+	     << findWord("powerless.", "text.txt") ;
+	/*if(argc < 3) return 0;
 	cout << "Word \"" << argv[1] << (findWord(argv[1], argv[2]) ? "\" found " : "\" not found ")
-		<< "in file \"" << argv[2] << "\"";	
+		<< "in file \"" << argv[2] << "\"";	*/
 	
 	return 0;
 }
@@ -36,7 +46,7 @@ void createFile(string name, string eofMark) {
 	int size = rand() % (MAX_FILE_SIZE - MIN_FILE_SIZE) + MIN_FILE_SIZE;
 	char c;
 	for(int i = 0; i < size; i++) 
-		ofs << (c = rand() % 128 + 64);
+		ofs << (c = rand() % 128/* + 64*/);
 
 	ofs << eofMark;
 	ofs.close();
@@ -50,7 +60,6 @@ void concatFiles(string resultFileName, int fCount, ...) {
 	va_start(list, fCount);
 	for(int i = 0; i < fCount; i++) {	
 		ifstream f(va_arg(list, string), ifstream::in);
-		
 		while(!f.eof()) {
 			f.getline(buf, BUFFER_SIZE);
 			ofs << buf;
@@ -67,6 +76,14 @@ void concatFiles(string resultFileName, int fCount, ...) {
 bool findWord(string word, string fileName) {
 	ifstream f(fileName, ifstream::in);
 	if(!f.is_open()) return false;
+	
+	int counter = 0;
+	while(!f.eof() || counter < 10000) {
+		f.seekg(counter);
+		if(f.peek() == '.') cout << f.peek() << " ";
+		counter++;
+	}
+	f.seekg(0);
 	
 	bool result = false;
 	string temp;	
