@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include "../../../../mylib.h"
 
 using namespace std;
 
@@ -7,15 +8,33 @@ using namespace std;
 #define SIZE(arr) sizeof((arr))/sizeof(int)
 #include "quickSort.h"
 
-void printArr(int* arr, int size) {
-	int sum = 0;
-	printf("\n");
+void sortedInsert(int*, int, int);
+int getBucketNum(int, int);
+
+void bucketSort(int* arr, int size) {
+	const int BUCKETS_COUNT = 10;
+	int bucket[BUCKETS_COUNT][size + 1];
+	for(int i = 0; i < BUCKETS_COUNT; i++) bucket[i][0] = 0;
+	
 	for(int i = 0; i < size; i++) {
-		sum += arr[i];
-		printf("%4d%c", arr[i], i > 1 && (i + 1) % 14 == 0 ? '\n' : ' ');
-		
+		if(arr[i] % 2 == 0) { 
+			sortedInsert(bucket[getBucketNum(arr[i], BUCKETS_COUNT)], size + 1, arr[i]);
+			arr[i] = -1;
+		}
 	}
-	//printf("\nChecksum :%d\n", sum);
+	
+	for(int i = 0; i < size; i++) {
+		if(arr[i] == -1) {
+			for(int j = 0; j < BUCKETS_COUNT; j++) {
+				if(bucket[j][0] > 0) {
+					arr[i] = bucket[j][bucket[j][0]];
+					bucket[j][0]--;
+					
+					break;
+				}
+			}
+		}
+	}
 }
 
 void sortedInsert(int* bucket, int size, int elem) {
@@ -53,45 +72,24 @@ int main(int argc, char ** argv) {
 	{ // 7.1 
 		system("cls");
 		cout << "===== 7.1 ===== Quick sort\n";
-		arr = arr_1; size = SIZE(arr_1);
+		size = 60;
+		arr = getArr(size, 1000);
 		
-		printArr(arr, size);
-		quickSort(arr, size);
+		printArr(arr, size, 5);
+		quickSort(arr, 0, size - 1);
 		cout << "\n";
-		printArr(arr, size);
+		printArr(arr, size, 5);
 	}
 	
 	// 7.2
 	cout << "\n\n===== 7.2 ===== Bucket sort, even positive numbers\n";
-	arr = arr_4; size = SIZE(arr_4);	
-	const int BUCKETS_COUNT = 10;
-	int bucket[BUCKETS_COUNT][size + 1];
-	for(int i = 0; i < BUCKETS_COUNT; i++) bucket[i][0] = 0;
-	
-	printArr(arr, size);
-	
-	for(int i = 0; i < size; i++) {
-		if(arr[i] != 0 && arr[i] % 2 == 0) { 
-			sortedInsert(bucket[getBucketNum(arr[i], BUCKETS_COUNT)], size + 1, arr[i]);
-			arr[i] = -1;
-		}
-	}
-	
-	for(int i = 0; i < size; i++) {
-		if(arr[i] == -1) {
-			for(int j = 0; j < BUCKETS_COUNT; j++) {
-				if(bucket[j][0] > 0) {
-					arr[i] = bucket[j][bucket[j][0]];
-					bucket[j][0]--;
-					
-					break;
-				}
-			}
-		}
-	}
-
+	size = 40;
+	arr = getArr(size, 150);
+	printArr(arr, size, 5);
 	cout << "\n";
-	printArr(arr, size);
+	
+	bucketSort(arr, size);
+	printArr(arr, size, 5);
 	cout << "\n";
 	
 	return 0;
