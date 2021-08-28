@@ -3,7 +3,7 @@ public:
 	Person(std::string name, int age, double weight, bool isMale) :
 		name(name), age(age), weight(weight), isMale(isMale) {}
 	
-	void print() {
+	virtual void print() const {
 		std::cout 	<< "Name: " << name << "\n" 
 				<< "Age: " << age << "\n" 
 				<< "Weight: " << weight << "\n" 
