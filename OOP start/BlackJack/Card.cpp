@@ -3,6 +3,8 @@
 ●	метод Flip(), который переворачивает карту, т.е. если она была рубашкой вверх, то он ее поворачивает лицом вверх, и наоборот.
 ●	метод GetValue(), который возвращает значение карты, пока можно считать, что туз = 1.
 */
+#ifndef BJ_CARDS
+#define BJ_CARDS
 
 typedef enum Suit { Hearts = 0, Spades = 1, Clubs = 2, Diamonds = 3 } Suit;
 typedef enum CardValue { 
@@ -28,3 +30,5 @@ private:
 	CardValue value;
 	bool stateOpen;
 };
+
+#endif
