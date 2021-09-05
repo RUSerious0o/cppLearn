@@ -1,3 +1,6 @@
+#ifndef BJ_HAND
+#define BJ_HAND
+
 #include <vector>
 #include "Card.cpp"
 
@@ -7,7 +10,7 @@ class Hand {
 public:
 	void add(Card*);
 	void clear();
-	int getValue();
+	int getTotal();
 	
 private:
 	vector<Card*> cards;
@@ -25,7 +28,7 @@ void Hand::clear() {
 }
 
 // два туза - блэк-джек. Пока считаем только сумму очков
-int Hand::getValue() {
+int Hand::getTotal() {
 	if(cards.size() == 2 && cards[0]->getValue() == 1 && cards[1]->getValue() == 1) {		
 		return 21;
 	}
@@ -49,3 +52,5 @@ int Hand::getValue() {
 	
 	return sum;
 }
+
+#endif
