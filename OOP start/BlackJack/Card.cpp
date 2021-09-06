@@ -14,7 +14,7 @@ typedef enum CardValue {
 
 class Card {
 public:
-	Card(CardValue value, Suit suit, bool stateOpen) :
+	Card(CardValue value, Suit suit, bool stateOpen = true) :
 		value(value), suit(suit), stateOpen(stateOpen) {}
 	
 	void flip() { stateOpen ^= 1; }
