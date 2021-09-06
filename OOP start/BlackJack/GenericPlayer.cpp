@@ -21,8 +21,7 @@ public:
 	//virtual bool isHitting() = 0;
 	
 	bool isBoosted() {
-		if(getTotal() > 21) return true;
-		return false;
+		return getTotal() > 21;
 	}
 	
 	void boost() {
