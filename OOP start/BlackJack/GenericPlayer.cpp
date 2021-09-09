@@ -9,6 +9,7 @@
 #define BJ_GENERIC_PLAYER
 
 #include "Hand.cpp"
+#include <ostream>
 
 using namespace std;
 
@@ -18,7 +19,9 @@ public:
 	
 	string getName() const { return name; }
 	
-	//virtual bool isHitting() = 0;
+	virtual bool isHitting() const {
+		return false;
+	};
 	
 	bool isBoosted() {
 		return getTotal() > 21;
@@ -28,8 +31,17 @@ public:
 		if(isBoosted())
 			cout << "Player: " << name << " is boosted!\n";
 	}
+
+	friend ostream& operator<< (ostream&, const GenericPlayer);
 private:
 	string name;
 };
+
+ostream& operator<< (ostream& out, GenericPlayer gPlayer) {
+	out << gPlayer.name << " cards: ";
+	for (Card* c : gPlayer.cards)
+		out << *c << " ";
+	return out;
+}
 
 #endif
