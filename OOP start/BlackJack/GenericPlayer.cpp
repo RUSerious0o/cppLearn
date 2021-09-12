@@ -30,15 +30,13 @@ public:
 			cout << "Player: " << name << " is boosted!\n";
 	}
 
-	friend ostream& operator<< (ostream&, const GenericPlayer&);
+	friend ostream& operator<<(ostream&, GenericPlayer&);
 private:
 	string name;
 };
 
-ostream& operator<< (ostream& out, const GenericPlayer& gPlayer) {
-	out << gPlayer.name << " cards: ";
-	for (Card* c : gPlayer.cards)
-		out << *c << " ";
+ostream& operator<< (ostream& out, GenericPlayer& player) {
+	out << player.name << " cards: " << (Hand) player;
 	return out;
 }
 
