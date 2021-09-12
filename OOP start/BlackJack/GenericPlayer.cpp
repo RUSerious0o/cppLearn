@@ -19,9 +19,7 @@ public:
 	
 	string getName() const { return name; }
 	
-	virtual bool isHitting() const {
-		return false;
-	};
+	virtual bool isHitting() const = 0;
 	
 	bool isBoosted() {
 		return getTotal() > 21;
@@ -32,12 +30,12 @@ public:
 			cout << "Player: " << name << " is boosted!\n";
 	}
 
-	friend ostream& operator<< (ostream&, const GenericPlayer);
+	friend ostream& operator<< (ostream&, const GenericPlayer&);
 private:
 	string name;
 };
 
-ostream& operator<< (ostream& out, GenericPlayer gPlayer) {
+ostream& operator<< (ostream& out, const GenericPlayer& gPlayer) {
 	out << gPlayer.name << " cards: ";
 	for (Card* c : gPlayer.cards)
 		out << *c << " ";
