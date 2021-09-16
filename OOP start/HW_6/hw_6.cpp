@@ -18,6 +18,8 @@ bool checkInput(string& s) {
 	if(s.size() == 0) return false;	
 	
 	for(int i = 0; i < s.size(); i++) {
+		if(s[i] == '-' && i == 0) continue;
+		
 		if(s[i] - '0' < 0 || s[i] - '0' > 9)
 			return false;
 	}
