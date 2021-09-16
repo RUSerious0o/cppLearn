@@ -1,3 +1,5 @@
+#pragma once
+
 #include "GenericPlayer.cpp"
 
 using namespace std;
@@ -15,6 +17,4 @@ public:
 		if (getTotal() == 0) return;
 		flipCard(0);
 	}
-private:
-
 };
