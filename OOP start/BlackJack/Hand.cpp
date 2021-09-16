@@ -10,9 +10,10 @@ class Hand {
 public:
 	void add(Card*);
 	void clear();
-	int getTotal();
+	int getTotal() const;
+	void flipCard(int);
 	
-private:
+protected:
 	vector<Card*> cards;
 };
 
@@ -28,7 +29,7 @@ void Hand::clear() {
 }
 
 // два туза - блэк-джек. Пока считаем только сумму очков
-int Hand::getTotal() {
+int Hand::getTotal() const {
 	if(cards.size() == 2 && cards[0]->getValue() == 1 && cards[1]->getValue() == 1) {		
 		return 21;
 	}
@@ -51,6 +52,11 @@ int Hand::getTotal() {
 	}
 	
 	return sum;
+}
+
+void Hand::flipCard(int cardId) {
+	if (cards.size() == 0) return;
+	cards[cardId]->flip();
 }
 
 #endif
