@@ -11,11 +11,18 @@ public:
 	void add(Card*);
 	void clear();
 	int getTotal() const;
-	void flipCard(int);
 	
+	friend ostream& operator<< (ostream&, const Hand&);
 protected:
 	vector<Card*> cards;
+	void flipCard(int);
 };
+
+ostream& operator<< (ostream& out, const Hand& hand) {
+	for (Card* c : hand.cards)
+		out << *c << " ";
+	return out;
+}
 
 void Hand::add(Card* card) {
 	cards.push_back(card);
