@@ -1,0 +1,1 @@
+-IC:\.conan\22dde6\1\include -IC:\Users\Phoenix\.conan\data\zlib\1.2.11\_\_\package\3fb49604f9c2f729b85ba3115852006824e72cab\include -O2 -Ob2 -DNDEBUG -MD -link -LIBPATH:C:\.conan\22dde6\1\lib -LIBPATH:C:\Users\Phoenix\.conan\data\zlib\1.2.11\_\_\package\3fb49604f9c2f729b85ba3115852006824e72cab\lib libprotoc.lib libprotobuf.lib zlib.lib

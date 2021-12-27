@@ -1,0 +1,18 @@
+syntax="proto3";
+
+package University;
+message FullName{
+    string name = 1;
+    string lastName = 2;
+    string patronymic = 3;
+}
+
+message Student{
+    FullName name = 1;
+    repeated int32 grades = 2;
+    double averageGrade = 3;
+}
+
+message StudetsGroup{
+    repeated University.Student students = 1;
+}
