@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d38be638-9269-4e3e-8185-168c200b37da": {
+      "ProjectGuid": "d38be638-9269-4e3e-8185-168c200b37da",
+      "DisplayName": "Bomber",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
