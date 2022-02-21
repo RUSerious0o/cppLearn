@@ -1,0 +1,23 @@
+﻿  Bomb.cpp
+  BombDecorator.cpp
+  BombIterator.cpp
+  CollisionDetector.cpp
+  Commands.cpp
+  HouseBuilder.cpp
+  HouseDirector.cpp
+  Logger.cpp
+  Ground.cpp
+  House.cpp
+  LevelGUI.cpp
+  LoggerSingleton.cpp
+  MyTools.cpp
+  Plane.cpp
+  RealBomb.cpp
+  SBomber.cpp
+  SBomberProject.cpp
+  Tank.cpp
+  TankAdaptee.cpp
+  TankAdapter.cpp
+  Создание кода...
+  LINK : не найден или не выполнена сборка G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\x64\Debug\Bomber.exe при последней инкрементной компоновке; выполняется полная компоновка
+  Bomber.vcxproj -> G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\x64\Debug\Bomber.exe
