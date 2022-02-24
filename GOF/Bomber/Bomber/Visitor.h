@@ -1,12 +1,16 @@
 #pragma once
 
-#include "Bomb.h"
-#include "Plane.h"
+class Bomb;
+class Plane;
 
 class Visitor {
 public:
-	void log(const Bomb& bomb) {}
-	void log(const Plane& plane) {}
-	void log(const Bomb& bomb) const {}
-	void log(const Plane& plane) const {}
+	virtual void log(const Bomb& bomb) const {}
+	virtual void log(const Plane& plane) const {}
+};
+
+class LogVisitor : public Visitor {
+public:
+	void log(const Bomb& bomb) const override;
+	void log(const Plane& plane) const override;
 };

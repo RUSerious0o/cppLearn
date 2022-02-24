@@ -110,7 +110,8 @@ void SBomber::MoveObjects()
     {
         if (vecDynamicObj[i] != nullptr)
         {
-            vecDynamicObj[i]->Move(deltaTime);
+            vecDynamicObj[i]->Move(deltaTime);            
+            vecDynamicObj[i]->Accept(logVisitor);
         }
     }
 };
@@ -131,7 +132,7 @@ Plane* SBomber::FindPlane() const
         Plane* p = dynamic_cast<Plane*>(vecDynamicObj[i]);        
         if (p != nullptr)
         {
-            Logger::getInstance().write(typeid(vecDynamicObj[i]).name());            
+            //Logger::getInstance().write(typeid(vecDynamicObj[i]).name());            
             return p;
         }
     }
@@ -146,7 +147,7 @@ LevelGUI* SBomber::FindLevelGUI() const
         LevelGUI* p = dynamic_cast<LevelGUI*>(vecStaticObj[i]);
         if (p != nullptr)
         {
-            Logger::getInstance().write(typeid(vecStaticObj[i]).name());
+            //Logger::getInstance().write(typeid(vecStaticObj[i]).name());
             return p;
         }
     }

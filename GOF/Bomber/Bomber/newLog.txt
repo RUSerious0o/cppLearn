@@ -1,33 +1,29 @@
-1. Thu Feb 24 14:19:38 2022 - We made it!
-2. Thu Feb 24 14:19:38 2022 - Are not we?! 5
-3. Thu Feb 24 14:19:38 2022 - OK then 5.6
-4. Thu Feb 24 14:19:39 2022 - class GameObject * __ptr64
-5. Thu Feb 24 14:19:39 2022 - class GameObject * __ptr64
-6. Thu Feb 24 14:19:39 2022 - class DynamicObject * __ptr64
-7. Thu Feb 24 14:19:39 2022 - class GameObject * __ptr64
-8. Thu Feb 24 14:19:39 2022 - class GameObject * __ptr64
-9. Thu Feb 24 14:19:39 2022 - class DynamicObject * __ptr64
-10. Thu Feb 24 14:19:39 2022 - class GameObject * __ptr64
-11. Thu Feb 24 14:19:39 2022 - class GameObject * __ptr64
-12. Thu Feb 24 14:19:39 2022 - class DynamicObject * __ptr64
-13. Thu Feb 24 14:19:40 2022 - class GameObject * __ptr64
-14. Thu Feb 24 14:19:40 2022 - class GameObject * __ptr64
-15. Thu Feb 24 14:19:40 2022 - class DynamicObject * __ptr64
-16. Thu Feb 24 14:19:40 2022 - class GameObject * __ptr64
-17. Thu Feb 24 14:19:40 2022 - class GameObject * __ptr64
-18. Thu Feb 24 14:19:40 2022 - class DynamicObject * __ptr64
-19. Thu Feb 24 14:19:40 2022 - class GameObject * __ptr64
-20. Thu Feb 24 14:19:40 2022 - class GameObject * __ptr64
-21. Thu Feb 24 14:19:40 2022 - class DynamicObject * __ptr64
-22. Thu Feb 24 14:19:40 2022 - class GameObject * __ptr64
-23. Thu Feb 24 14:19:40 2022 - class GameObject * __ptr64
-24. Thu Feb 24 14:19:40 2022 - class DynamicObject * __ptr64
-25. Thu Feb 24 14:19:41 2022 - class GameObject * __ptr64
-26. Thu Feb 24 14:19:41 2022 - class GameObject * __ptr64
-27. Thu Feb 24 14:19:41 2022 - class DynamicObject * __ptr64
-28. Thu Feb 24 14:19:41 2022 - class GameObject * __ptr64
-29. Thu Feb 24 14:19:41 2022 - class GameObject * __ptr64
-30. Thu Feb 24 14:19:41 2022 - class DynamicObject * __ptr64
-31. Thu Feb 24 14:19:41 2022 - class GameObject * __ptr64
-32. Thu Feb 24 14:19:41 2022 - class GameObject * __ptr64
-33. Thu Feb 24 14:19:41 2022 - class DynamicObject * __ptr64
+1. Thu Feb 24 16:03:52 2022 - We made it!
+2. Thu Feb 24 16:03:52 2022 - Are not we?! 5
+3. Thu Feb 24 16:03:52 2022 - OK then 5.6
+4. Thu Feb 24 16:03:52 2022 - Plane: x 5 y 10 speed 4 dx 1 dy 0.1
+5. Thu Feb 24 16:03:52 2022 - Plane: x 6.124 y 10.1124 speed 4 dx 1 dy 0.1
+6. Thu Feb 24 16:03:52 2022 - Plane: x 7.244 y 10.2244 speed 4 dx 1 dy 0.1
+7. Thu Feb 24 16:03:53 2022 - Plane: x 8.308 y 10.3308 speed 4 dx 1 dy 0.1
+8. Thu Feb 24 16:03:53 2022 - Plane: x 9.428 y 10.4428 speed 4 dx 1 dy 0.1
+9. Thu Feb 24 16:03:53 2022 - Plane: x 10.552 y 10.5552 speed 4 dx 1 dy 0.1
+10. Thu Feb 24 16:03:54 2022 - Plane: x 11.612 y 10.6612 speed 4 dx 1 dy 0.1
+11. Thu Feb 24 16:03:54 2022 - Bomb: x 14.8064 y 13.4032 speed 3.2 dx 0.3 dy 1
+12. Thu Feb 24 16:03:54 2022 - Plane: x 12.736 y 10.7736 speed 4 dx 1 dy 0.1
+13. Thu Feb 24 16:03:54 2022 - Bomb: x 15.0762 y 14.3024 speed 3.2 dx 0.3 dy 1
+14. Thu Feb 24 16:03:54 2022 - Plane: x 13.796 y 10.8796 speed 4 dx 1 dy 0.1
+15. Thu Feb 24 16:03:54 2022 - Bomb: x 15.3306 y 15.1504 speed 3.2 dx 0.3 dy 1
+16. Thu Feb 24 16:03:54 2022 - Plane: x 14.92 y 10.992 speed 4 dx 1 dy 0.1
+17. Thu Feb 24 16:03:54 2022 - Bomb: x 15.6003 y 16.0496 speed 3.2 dx 0.3 dy 1
+18. Thu Feb 24 16:03:55 2022 - Plane: x 15.98 y 10.833 speed 4 dx 1 dy -0.15
+19. Thu Feb 24 16:03:55 2022 - Bomb: x 15.8547 y 16.8976 speed 3.2 dx 0.3 dy 1
+20. Thu Feb 24 16:03:55 2022 - Plane: x 17.044 y 10.6734 speed 4 dx 1 dy -0.15
+21. Thu Feb 24 16:03:55 2022 - Bomb: x 16.1101 y 17.7488 speed 3.2 dx 0.3 dy 1
+22. Thu Feb 24 16:03:55 2022 - Plane: x 18.164 y 10.5054 speed 4 dx 1 dy -0.15
+23. Thu Feb 24 16:03:55 2022 - Bomb: x 16.3789 y 18.6448 speed 3.2 dx 0.3 dy 1
+24. Thu Feb 24 16:03:55 2022 - Plane: x 19.228 y 10.3458 speed 4 dx 1 dy -0.15
+25. Thu Feb 24 16:03:55 2022 - Bomb: x 16.6342 y 19.496 speed 3.2 dx 0.3 dy 1
+26. Thu Feb 24 16:03:56 2022 - Plane: x 20.348 y 10.1778 speed 4 dx 1 dy -0.15
+27. Thu Feb 24 16:03:56 2022 - Plane: x 21.412 y 10.0182 speed 4 dx 1 dy -0.15
+28. Thu Feb 24 16:03:56 2022 - Plane: x 22.532 y 9.8502 speed 4 dx 1 dy -0.15
+29. Thu Feb 24 16:03:57 2022 - Plane: x 23.596 y 9.6906 speed 4 dx 1 dy -0.15

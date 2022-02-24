@@ -142,6 +142,8 @@
     <ClInclude Include="Bomb.h" />
     <ClInclude Include="BombDecorator.h" />
     <ClInclude Include="BombIterator.h" />
+    <ClInclude Include="BombObservable.h" />
+    <ClInclude Include="BombObserver.h" />
     <ClInclude Include="CollisionDetector.h" />
     <ClInclude Include="Commands.h" />
     <ClInclude Include="DestroyableGroundObject.h" />
@@ -155,6 +157,7 @@
     <ClInclude Include="MyTools.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="RealBomb.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="SBomber.h" />
     <ClInclude Include="Tank.h" />
     <ClInclude Include="TankAdaptee.h" />
@@ -165,6 +168,8 @@
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="BombDecorator.cpp" />
     <ClCompile Include="BombIterator.cpp" />
+    <ClCompile Include="BombObservable.cpp" />
+    <ClCompile Include="BombObserver.cpp" />
     <ClCompile Include="CollisionDetector.cpp" />
     <ClCompile Include="Commands.cpp" />
     <ClCompile Include="HouseBuilder.cpp" />
@@ -186,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="tasks.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Bomber.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

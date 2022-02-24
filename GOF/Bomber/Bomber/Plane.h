@@ -10,21 +10,10 @@ public:
 
     inline void ChangePlaneY(double dy) { yDirection += dy; }
 
-    void Accept(const Visitor& visitor) {
+    void __fastcall Accept(const Visitor& visitor) override {
         visitor.log(*this);
     }
 
-    void Accept(Visitor& visitor) {
-        visitor.log(*this);
-    }
-
-    void Accept(const Visitor& visitor) const {
-        visitor.log(*this);
-    }
-
-    void Accept(Visitor& visitor) const {
-        visitor.log(*this);
-    }
 private:
 
 };

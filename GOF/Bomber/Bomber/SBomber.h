@@ -11,6 +11,7 @@
 #include "Commands.h"
 #include "BombIterator.h"
 #include "CollisionDetector.h"
+#include "Visitor.h"
 
 class SBomber {    
 public:
@@ -42,4 +43,5 @@ private:
 
     CommandInterface commandInterface;
     BaseCollisionDetector collisionDetector;
+    LogVisitor logVisitor;
 };
