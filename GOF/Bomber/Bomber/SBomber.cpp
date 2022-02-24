@@ -54,7 +54,7 @@ SBomber::SBomber()
     vecStaticObj.push_back(pGUI);
 
     Ground* pGr = new Ground;
-    const uint16_t groundY = maxY - 5;
+    const uint16_t groundY = GetMaxY() - 5;
     pGr->SetPos(offset + 1, groundY);
     pGr->SetWidth(width - 2);
     vecStaticObj.push_back(pGr);
@@ -126,7 +126,8 @@ void SBomber::CheckObjects()
         WriteToLog(string(__FUNCTION__) + " was invoked");
 
     collisionDetector.CheckPlaneAndLevelGUI(FindPlane(), FindLevelGUI(), exitFlag);
-    collisionDetector.CheckBombsAndGround(vecDynamicObj, vecStaticObj, commandInterface, score);
+    //collisionDetector.CheckBombsAndGround(vecDynamicObj, vecStaticObj, commandInterface, score);
+    CheckBombLanding();
 };
 
 Plane* SBomber::FindPlane() const
@@ -185,17 +186,19 @@ void SBomber::ProcessKBHit()
 
     case 'b': case 'B':
         commandInterface.Invoke(
-            new DropBombCommand(FindPlane(), vecDynamicObj, new RealBomb, bombsNumber, score));
+            new DropBombCommand(FindPlane(), vecDynamicObj, vecStaticObj,
+                new RealBomb, bombsNumber, score));
         break;
 
     case 'n':
         commandInterface.Invoke(
-            new DropBombCommand(FindPlane(), vecDynamicObj, new BombDecorator(new RealBomb), bombsNumber, score));
+            new DropBombCommand(FindPlane(), vecDynamicObj, vecStaticObj, 
+                new BombDecorator(new RealBomb), bombsNumber, score));
         break;
 
     case 'v':
         commandInterface.Invoke(
-            new DropBombCommand(FindPlane(), vecDynamicObj, 
+            new DropBombCommand(FindPlane(), vecDynamicObj, vecStaticObj,
                 new BombDecorator(new BombDecorator(new RealBomb)), bombsNumber, score));
         break;
 
@@ -248,8 +251,40 @@ void SBomber::TimeFinish()
         WriteToLog(string(__FUNCTION__) + " deltaTime = ", (int)deltaTime);
 }
 
-void SBomber::DestroyObject(DestroyableGroundObject* object) {
+void SBomber::DestroyObject(DestroyableGroundObject* object, Bomb* bomb) {
     score += object->GetScore();
+    FindGround(vecStaticObj)->AddCrater(bomb->GetX());
+
     commandInterface.Invoke(
         new DeleteStaticObjCommand(object, vecStaticObj));
+    
+    commandInterface.Invoke(
+        new DeleteDynamicObjCommand(bomb, vecDynamicObj));
+
+    
+}
+
+void SBomber::CheckBombLanding() {    
+    for (DynamicObject* obj : vecDynamicObj) {                
+        if (typeid(*obj).name() != typeid(Plane).name()) {            
+            if (obj->GetY() >= GetMaxY() - 5) {
+                dynamic_cast<Bomb*>(obj)->Notify();                
+            }
+        }
+    }
+}
+
+Ground* SBomber::FindGround(std::vector<GameObject*>& vecStaticObj) const {
+    Ground* pGround;
+
+    for (size_t i = 0; i < vecStaticObj.size(); i++)
+    {
+        pGround = dynamic_cast<Ground*>(vecStaticObj[i]);
+        if (pGround != nullptr)
+        {
+            return pGround;
+        }
+    }
+
+    return nullptr;
 }

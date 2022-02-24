@@ -6,6 +6,9 @@
 #include "RealBomb.h"
 #include "Plane.h"
 #include "Ground.h"
+#include "House.h"
+#include "Tank.h"
+#include "DestroyableGroundObject.h"
 
 #include <vector>
 
@@ -65,10 +68,14 @@ private:
 
 class DropBombCommand : public Command {
 public:
-    DropBombCommand(const Plane* plane, std::vector<DynamicObject*>& objects, DynamicObject* bomb,
+    DropBombCommand(const Plane* plane, std::vector<DynamicObject*>& objects,
+        std::vector<GameObject*> staticObjects,
+        Bomb* bomb,
         uint16_t& bombsCount, int16_t& score,
         double speed = 2.0, CraterSize craterSize = SMALL_CRATER_SIZE) :
-        plane(plane), objects(objects), bomb(bomb),
+        plane(plane), objects(objects), 
+        staticObjects(staticObjects),
+        bomb(bomb),
         bombsCount(bombsCount), score(score),
         speed(speed), craterSize(craterSize) {}
 
@@ -86,6 +93,21 @@ public:
             bomb->SetPos(x, y);
             bomb->SetWidth(craterSize);
 
+            for (GameObject* obj : staticObjects) {
+                /*if (typeid(*obj).name() == typeid(House).name()) {
+                    bomb->AddObserver(dynamic_cast<House*>(obj));
+                    continue;
+                }
+
+                if (typeid(*obj).name() == typeid(Tank).name()) {
+                    bomb->AddObserver(dynamic_cast<Tank*>(obj));
+                }*/
+                DestroyableGroundObject* target = dynamic_cast<DestroyableGroundObject*>(obj);
+                if (target != nullptr) {
+                    bomb->AddObserver(target);
+                }
+            }
+
             objects.push_back(bomb);
             bombsCount--;
             score -= Bomb::BombCost;
@@ -94,11 +116,12 @@ public:
 private:
     const Plane* plane;
     std::vector<DynamicObject*>& objects;
+    std::vector<GameObject*> staticObjects;
     uint16_t& bombsCount;
     int16_t& score;
     double speed;
     CraterSize craterSize;
-    DynamicObject* bomb;
+    Bomb* bomb;
 };
 
 class DropDecoratedBomd : public Command {
