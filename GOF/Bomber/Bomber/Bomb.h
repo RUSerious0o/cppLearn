@@ -10,6 +10,7 @@ public:
 	virtual void Draw() const {}
 
 	virtual int getHeight() { return 0; }
+
 private:
 
 };

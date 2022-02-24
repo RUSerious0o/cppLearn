@@ -1,23 +1,94 @@
-﻿  Bomb.cpp
-  BombDecorator.cpp
-  BombIterator.cpp
-  CollisionDetector.cpp
-  Commands.cpp
-  HouseBuilder.cpp
-  HouseDirector.cpp
+﻿  CollisionDetector.cpp
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,22): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,22): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,22): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,22): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(14,16): error C2663: Visitor::log: для 4 перегрузок нет допустимого преобразования для указателя "this"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(18,1): error C2664: "void Visitor::log(const Bomb &)": невозможно преобразовать аргумент 1 из "Plane" в "const Bomb &"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(18,1): message : Причина: невозможно преобразовать "Plane" в "const Bomb"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(18,21): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,7): message : см. объявление "Visitor::log"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(22,16): error C2663: Visitor::log: для 4 перегрузок нет допустимого преобразования для указателя "this"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(26,1): error C2664: "void Visitor::log(const Bomb &)": невозможно преобразовать аргумент 1 из "const Plane" в "const Bomb &"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(26,1): message : Причина: невозможно преобразовать "const Plane" в "const Bomb"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(26,21): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,7): message : см. объявление "Visitor::log"
   Logger.cpp
-  Ground.cpp
-  House.cpp
-  LevelGUI.cpp
   LoggerSingleton.cpp
-  MyTools.cpp
   Plane.cpp
-  RealBomb.cpp
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,21): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,21): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,22): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,22): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,31): error C2535: void Visitor::log(const int): функция-член уже определена или объявлена
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6): message : см. объявление "Visitor::log"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(8,21): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(8,21): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,22): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,22): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,37): error C2535: void Visitor::log(const int) const: функция-член уже определена или объявлена
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(8): message : см. объявление "Visitor::log"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(14,16): error C2663: Visitor::log: для 2 перегрузок нет допустимого преобразования для указателя "this"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(18,1): error C2664: "void Visitor::log(const int)": невозможно преобразовать аргумент 1 из "Plane" в "const int"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(18,21): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,7): message : см. объявление "Visitor::log"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(22,16): error C2663: Visitor::log: для 2 перегрузок нет допустимого преобразования для указателя "this"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(26,1): error C2664: "void Visitor::log(const int)": невозможно преобразовать аргумент 1 из "const Plane" в "const int"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(26,21): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,7): message : см. объявление "Visitor::log"
   SBomber.cpp
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,21): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,21): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,22): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,22): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,31): error C2535: void Visitor::log(const int): функция-член уже определена или объявлена
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6): message : см. объявление "Visitor::log"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(8,21): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(8,21): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,22): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,22): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,37): error C2535: void Visitor::log(const int) const: функция-член уже определена или объявлена
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(8): message : см. объявление "Visitor::log"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(14,16): error C2663: Visitor::log: для 2 перегрузок нет допустимого преобразования для указателя "this"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(18,1): error C2664: "void Visitor::log(const int)": невозможно преобразовать аргумент 1 из "Plane" в "const int"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(18,21): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,7): message : см. объявление "Visitor::log"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(22,16): error C2663: Visitor::log: для 2 перегрузок нет допустимого преобразования для указателя "this"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(26,1): error C2664: "void Visitor::log(const int)": невозможно преобразовать аргумент 1 из "const Plane" в "const int"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(26,21): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,7): message : см. объявление "Visitor::log"
   SBomberProject.cpp
-  Tank.cpp
-  TankAdaptee.cpp
-  TankAdapter.cpp
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,21): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,21): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,22): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,22): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,31): error C2535: void Visitor::log(const int): функция-член уже определена или объявлена
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6): message : см. объявление "Visitor::log"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(8,21): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(8,21): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,22): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,22): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,37): error C2535: void Visitor::log(const int) const: функция-член уже определена или объявлена
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(8): message : см. объявление "Visitor::log"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(14,16): error C2663: Visitor::log: для 2 перегрузок нет допустимого преобразования для указателя "this"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(18,1): error C2664: "void Visitor::log(const int)": невозможно преобразовать аргумент 1 из "Plane" в "const int"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(18,21): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,7): message : см. объявление "Visitor::log"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(22,16): error C2663: Visitor::log: для 2 перегрузок нет допустимого преобразования для указателя "this"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(26,1): error C2664: "void Visitor::log(const int)": невозможно преобразовать аргумент 1 из "const Plane" в "const int"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Plane.h(26,21): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,7): message : см. объявление "Visitor::log"
+  Visitor.cpp
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,21): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6,21): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,22): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,22): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(7,31): error C2535: void Visitor::log(const int): функция-член уже определена или объявлена
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(6): message : см. объявление "Visitor::log"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(8,21): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(8,21): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,22): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,22): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(9,37): error C2535: void Visitor::log(const int) const: функция-член уже определена или объявлена
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\Visitor.h(8): message : см. объявление "Visitor::log"
   Создание кода...
-  LINK : не найден или не выполнена сборка G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\x64\Debug\Bomber.exe при последней инкрементной компоновке; выполняется полная компоновка
-  Bomber.vcxproj -> G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\x64\Debug\Bomber.exe

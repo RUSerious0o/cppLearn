@@ -159,6 +159,7 @@
     <ClInclude Include="Tank.h" />
     <ClInclude Include="TankAdaptee.h" />
     <ClInclude Include="TankAdapter.h" />
+    <ClInclude Include="Visitor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bomb.cpp" />
@@ -181,6 +182,7 @@
     <ClCompile Include="Tank.cpp" />
     <ClCompile Include="TankAdaptee.cpp" />
     <ClCompile Include="TankAdapter.cpp" />
+    <ClCompile Include="Visitor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="tasks.txt" />
