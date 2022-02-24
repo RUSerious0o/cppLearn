@@ -11,8 +11,10 @@
 #include "Commands.h"
 #include "BombIterator.h"
 #include "CollisionDetector.h"
+#include "Visitor.h"
+#include "LandObjectObserver.h"
 
-class SBomber {    
+class SBomber : public LandObjectObserver {
 public:
     SBomber();
     ~SBomber();
@@ -26,10 +28,15 @@ public:
     void DrawFrame();
     void MoveObjects();
     void CheckObjects();
+    
+    void DestroyObject(DestroyableGroundObject* object, Bomb* bomb) override;
 
 private:
     Plane * FindPlane() const;
     LevelGUI * FindLevelGUI() const;
+    Ground* FindGround(std::vector<GameObject*>& vecStaticObj) const;
+
+    void CheckBombLanding();    
 
     std::vector<DynamicObject*> vecDynamicObj;
     std::vector<GameObject*> vecStaticObj;
@@ -42,4 +49,5 @@ private:
 
     CommandInterface commandInterface;
     BaseCollisionDetector collisionDetector;
+    LogVisitor logVisitor;
 };
