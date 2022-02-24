@@ -12,8 +12,9 @@
 #include "BombIterator.h"
 #include "CollisionDetector.h"
 #include "Visitor.h"
+#include "Observer.h"
 
-class SBomber {    
+class SBomber : public Observer {
 public:
     SBomber();
     ~SBomber();
@@ -27,7 +28,7 @@ public:
     void DrawFrame();
     void MoveObjects();
     void CheckObjects();
-
+    void DestroyObject(DestroyableGroundObject* object);
 private:
     Plane * FindPlane() const;
     LevelGUI * FindLevelGUI() const;

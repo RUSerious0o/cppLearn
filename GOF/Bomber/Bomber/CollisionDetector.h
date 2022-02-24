@@ -115,9 +115,10 @@ private:
             const double x2 = x1 + size;
             if (vecDestoyableObjects[i]->isInside(x1, x2))
             {
-                score += vecDestoyableObjects[i]->GetScore();
+                /*score += vecDestoyableObjects[i]->GetScore();
                 commandInterface.Invoke(
-                    new DeleteStaticObjCommand(vecDestoyableObjects[i], vecStaticObj));
+                    new DeleteStaticObjCommand(vecDestoyableObjects[i], vecStaticObj));*/
+                vecDestoyableObjects[i]->Notify();
             }
         }
     }

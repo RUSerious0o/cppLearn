@@ -5,9 +5,8 @@
 #include "DynamicObject.h"
 #include "GameObject.h"
 #include "Visitor.h"
-#include "BombObservable.h"
 
-class Bomb : public DynamicObject, public BombObservable {
+class Bomb : public DynamicObject {
 public:
 	static const uint16_t BombCost = 10; // стоимость бомбы в очках
 
@@ -19,17 +18,5 @@ public:
 		visitor.log(*this);
 	}
 
-	void AddObserver(BombObserver& observer) override {
-		observers.push_back(observer);
-	}
-
-	void RemoveObserver(BombObserver& observer) override {}
-
-	void Notify() override {
-
-	}
-
-protected:
-	std::vector<BombObserver> observers;
 };
 

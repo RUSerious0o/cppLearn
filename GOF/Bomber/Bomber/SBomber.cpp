@@ -63,23 +63,27 @@ SBomber::SBomber()
     pTank->SetWidth(13);
     pTank->SetPos(42, groundY - 1);
     vecStaticObj.push_back(pTank);
+    pTank->AddObserver(this);
 
     TankAdapter* pTankAdapter = new TankAdapter;
     pTankAdapter->SetWidth(14);
     pTankAdapter->SetPos(10, groundY - 1);
     vecStaticObj.push_back(pTankAdapter);
+    pTankAdapter->AddObserver(this);
 
     HouseDirector houseDirector(new HouseBuilder_B(new House));
     House* pHouse = houseDirector.getHouse();
     pHouse->SetWidth(13);
     pHouse->SetPos(55, groundY - 1);
     vecStaticObj.push_back(pHouse);
+    pHouse->AddObserver(this);
 
     houseDirector.setBuilder(new HouseBuilder_A(new House));
     pHouse = houseDirector.getHouse();
     pHouse->SetWidth(13);
     pHouse->SetPos(25, groundY - 1);
     vecStaticObj.push_back(pHouse);
+    pHouse->AddObserver(this);
 }
 
 SBomber::~SBomber()
@@ -131,8 +135,7 @@ Plane* SBomber::FindPlane() const
     {
         Plane* p = dynamic_cast<Plane*>(vecDynamicObj[i]);        
         if (p != nullptr)
-        {
-            //Logger::getInstance().write(typeid(vecDynamicObj[i]).name());            
+        {                      
             return p;
         }
     }
@@ -146,8 +149,7 @@ LevelGUI* SBomber::FindLevelGUI() const
     {
         LevelGUI* p = dynamic_cast<LevelGUI*>(vecStaticObj[i]);
         if (p != nullptr)
-        {
-            //Logger::getInstance().write(typeid(vecStaticObj[i]).name());
+        {            
             return p;
         }
     }
@@ -244,4 +246,10 @@ void SBomber::TimeFinish()
 
     FileLoggerSingleton::getInstance().
         WriteToLog(string(__FUNCTION__) + " deltaTime = ", (int)deltaTime);
+}
+
+void SBomber::DestroyObject(DestroyableGroundObject* object) {
+    score += object->GetScore();
+    commandInterface.Invoke(
+        new DeleteStaticObjCommand(object, vecStaticObj));
 }

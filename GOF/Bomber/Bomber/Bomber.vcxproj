@@ -142,8 +142,8 @@
     <ClInclude Include="Bomb.h" />
     <ClInclude Include="BombDecorator.h" />
     <ClInclude Include="BombIterator.h" />
-    <ClInclude Include="BombObservable.h" />
-    <ClInclude Include="BombObserver.h" />
+    <ClInclude Include="Observable.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="CollisionDetector.h" />
     <ClInclude Include="Commands.h" />
     <ClInclude Include="DestroyableGroundObject.h" />
@@ -168,8 +168,8 @@
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="BombDecorator.cpp" />
     <ClCompile Include="BombIterator.cpp" />
-    <ClCompile Include="BombObservable.cpp" />
-    <ClCompile Include="BombObserver.cpp" />
+    <ClCompile Include="Observable.cpp" />
+    <ClCompile Include="Observer.cpp" />
     <ClCompile Include="CollisionDetector.cpp" />
     <ClCompile Include="Commands.cpp" />
     <ClCompile Include="HouseBuilder.cpp" />
