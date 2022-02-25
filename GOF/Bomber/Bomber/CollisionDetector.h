@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <memory>
 
 #include "DynamicObject.h"
 #include "LevelGUI.h"
@@ -13,14 +14,18 @@
 
 class CollisionDetector {
 public:
-    virtual void CheckPlaneAndLevelGUI(DynamicObject* plane, LevelGUI* gui, bool& exitFlag) = 0;
+    virtual void CheckPlaneAndLevelGUI(std::shared_ptr<Plane> plane, 
+        std::shared_ptr<LevelGUI> gui, bool& exitFlag) = 0;
 
     virtual ~CollisionDetector() = default;
 };
 
 class BaseCollisionDetector : public CollisionDetector {
 public:
-    void CheckPlaneAndLevelGUI(DynamicObject* plane, LevelGUI* gui, bool& exitFlag) override {
+    void CheckPlaneAndLevelGUI(std::shared_ptr<Plane> plane, 
+        std::shared_ptr<LevelGUI> gui, 
+        bool& exitFlag) override {
+
         if(plane->GetX() > gui->GetFinishX()) {
             exitFlag = true;
         }

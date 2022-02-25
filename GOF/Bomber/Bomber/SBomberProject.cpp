@@ -5,22 +5,15 @@
 
 #include "SBomber.h"
 #include "MyTools.h"
-#include "LoggerSingleton.cpp"
+
 #include "Logger.cpp"
 
 using namespace std;
 
-//========================================================================================================================
-
 int main(void)
 {
-    FileLoggerSingleton::getInstance().OpenLogFile("log.txt");
-
     Logger::getInstance().openLog("newLog.txt");
-    Logger::getInstance().write("We made it!");
-    Logger::getInstance().write("Are not we?! ", 5);
-    Logger::getInstance().write("OK then ", 5.6);        
-    
+        
     SBomber game;
 
     do {
@@ -43,7 +36,6 @@ int main(void)
     } while (!game.GetExitFlag());
 
     Logger::getInstance().closeLog();
-    FileLoggerSingleton::getInstance().CloseLogFile();
-
+    
     return 0;
 }

@@ -5,6 +5,6 @@ class Bomb;
 
 class LandObjectObserver {
 public:
-	virtual void DestroyObject(DestroyableGroundObject* object, Bomb* bomb) = 0;
+	virtual void DestroyObject(DestroyableGroundObject* object) = 0;
 };
 

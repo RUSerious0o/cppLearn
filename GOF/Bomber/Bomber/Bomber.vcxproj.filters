@@ -125,9 +125,6 @@
     <ClCompile Include="Logger.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="LoggerSingleton.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Commands.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>

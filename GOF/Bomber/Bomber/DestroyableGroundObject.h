@@ -23,7 +23,7 @@ public:
 
     virtual void Notify() override {
         for (LandObjectObserver* observer : observers) {
-            observer->DestroyObject(this, bomb);
+            observer->DestroyObject(this);
         }
     }
 
@@ -35,11 +35,9 @@ public:
         if ((x + radius > leftBorder) && (x + radius < rightBorder) ||
             (x - radius < rightBorder) && (x - radius > leftBorder)) {
 
-            this->bomb = bomb;
             this->Notify();
         }
     }
 protected:
     std::vector<LandObjectObserver*> observers;
-    Bomb* bomb;
 };

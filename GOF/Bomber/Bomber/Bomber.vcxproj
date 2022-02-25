@@ -182,7 +182,6 @@
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="House.cpp" />
     <ClCompile Include="LevelGUI.cpp" />
-    <ClCompile Include="LoggerSingleton.cpp" />
     <ClCompile Include="MyTools.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="RealBomb.cpp" />

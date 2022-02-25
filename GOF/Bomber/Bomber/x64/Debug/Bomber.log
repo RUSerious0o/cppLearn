@@ -1,7 +1,10 @@
 ﻿  CollisionDetector.cpp
+  Commands.cpp
   House.cpp
   HouseBuilder.cpp
   HouseDirector.cpp
+  LandObjectObservable.cpp
+  LandObjectObserver.cpp
   SBomber.cpp
   SBomberProject.cpp
   Tank.cpp
