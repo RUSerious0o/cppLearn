@@ -8,6 +8,12 @@
 using namespace std;
 using namespace MyTools;
 
+const std::vector<std::string> Tank::phrases{
+	"I`ll crush you!",
+	"Come and get me!",
+	"I`m not afraid!"
+};
+
 bool Tank::isInside(double x1, double x2) const
 {
 	const double XBeg = x + 2;
