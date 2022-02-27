@@ -1,10 +1,2 @@
-﻿  CollisionDetector.cpp
-  House.cpp
-  HouseBuilder.cpp
-  HouseDirector.cpp
-  SBomber.cpp
-  SBomberProject.cpp
-  Tank.cpp
-  TankAdapter.cpp
-  Создание кода...
+﻿  Tank.cpp
   Bomber.vcxproj -> G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\x64\Debug\Bomber.exe

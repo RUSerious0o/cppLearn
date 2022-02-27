@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdint.h>
+#include <iostream>
 
 #include "DestroyableGroundObject.h"
 
@@ -15,7 +16,7 @@ public:
 	virtual void Draw() const override;
 
 private:
-
 	const uint16_t score = 30;
+	static const std::vector<std::string> phrases;
 };
 
