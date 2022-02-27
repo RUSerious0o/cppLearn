@@ -1,8 +1,12 @@
 #pragma once
 
 #include <stdint.h>
+#include <sstream>
+#include <utility>
 
 #include "GameObject.h"
+#include "Visitor.h"
+#include "Logger.cpp"
 
 class DynamicObject : public GameObject 
 {
@@ -15,6 +19,12 @@ public:
     
     virtual void Move(uint16_t time) { x += xDirction * speed * time * 0.001; y += yDirection * speed * time * 0.001; };
 
+    virtual inline double GetSpeed() const { return speed; }
+    virtual inline std::pair<double, double> GetDirection() const { 
+        return std::pair<double, double>(xDirction, yDirection);
+    }
+
+    virtual void __fastcall Accept(const Visitor& visitor) {}
 protected:
 
     double speed;
