@@ -17,7 +17,7 @@ void DeleteBombCommand::Execute() {
     for (; it != objects.end(); it++) {
         if (*it == obj) {
             auto temp = it;
-            delete* temp;
+            //delete* temp;
             objects.erase(it);            
 
             break;

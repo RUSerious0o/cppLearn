@@ -131,6 +131,11 @@ void SBomber::CheckBombLanding() {
     for (Bomb* bomb : bombs) {
         if (bomb != nullptr) {
             if (bomb->GetY() >= ground->GetY()) {
+                // if observers added when bomb dropped, throws error when object
+                // destroyed while another bomb is in air
+                for (DestroyableGroundObject* object : groundObjects) {
+                    bomb->AddObserver(object);
+                }
                 bomb->Notify();
             }
         }
@@ -192,11 +197,8 @@ void SBomber::ProcessKBHit()
 void SBomber::ProcessBomb(Bomb* bomb) {
     bombs.push_back(bomb);
     bombsCount--;
-    score -= Bomb::BombCost;
-    
-    for (DestroyableGroundObject* object : groundObjects) {
-        bomb->AddObserver(object);
-    }
+    score -= Bomb::BombCost;    
+
     bomb->AddObserver(this);
     
     commandInterface.Invoke(new DropBombCommand(plane, bomb));
