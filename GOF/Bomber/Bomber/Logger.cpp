@@ -16,15 +16,6 @@ public:
         return instance;
     }
 
-    void __fastcall openLog(const std::string& fileName) {
-        out.open(fileName, std::ios::out);
-    }
-
-    void closeLog() {
-        if (!out.is_open()) return;
-        out.close();
-    }
-
     void __fastcall write(const std::string& str) {
         if (!out.is_open()) return;
         if (!writer) return;
@@ -44,9 +35,24 @@ public:
     }
     
 private:
-    Logger() : writer(std::shared_ptr<NumberedWriter>{new NumberedWriter(*this)}) {}
+    Logger() : writer(std::shared_ptr<NumberedWriter>{new NumberedWriter(*this)}) {        
+        openLog("newLog.txt");
+    }
     Logger(const Logger&) = delete;
     Logger& operator=(const Logger&) = delete;
+
+    ~Logger() {
+        closeLog();
+    }
+
+    void __fastcall openLog(const std::string& fileName) {
+        out.open(fileName, std::ios::out);
+    }
+
+    void closeLog() {
+        if (!out.is_open()) return;
+        out.close();
+    }
 
     class Writer {
     public:

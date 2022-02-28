@@ -10,10 +10,7 @@
 
 using namespace std;
 
-int main(void)
-{
-    Logger::getInstance().openLog("newLog.txt");
-        
+int main(void) {        
     SBomber game;
 
     do {
@@ -31,11 +28,9 @@ int main(void)
         game.MoveObjects();
         game.CheckObjects();
 
-        game.TimeFinish();
+        game.TimeFinish();    
 
     } while (!game.GetExitFlag());
 
-    Logger::getInstance().closeLog();
-    
     return 0;
 }
