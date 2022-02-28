@@ -1,17 +1,36 @@
 
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #include "Tank.h"
 #include "MyTools.h"
 #include "Logger.cpp"
+#include "Mediator.h"
 
 using namespace std;
 using namespace MyTools;
 
+Tank::Tank() {
+	srand(time(0));
+}
+
+Tank::~Tank() {
+	Mediator::getInstance().Unsubscribe(this);
+}
+
+std::string Tank::GetMsg() {	
+	return phrases[rand() % phrases.size()];
+}
+
 const std::vector<std::string> Tank::phrases{
 	"I`ll crush you!",
 	"Come and get me!",
-	"I`m not afraid!"
+	"I`m not afraid!",
+	"You cant break my armor!",
+	"You'll never hit!",
+	"Wingass!"
 };
 
 bool Tank::isInside(double x1, double x2) const

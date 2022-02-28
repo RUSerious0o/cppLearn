@@ -17,8 +17,8 @@ void DeleteBombCommand::Execute() {
     for (; it != objects.end(); it++) {
         if (*it == obj) {
             auto temp = it;
-            objects.erase(it);
-            //delete *temp;         // throws error
+            delete* temp;
+            objects.erase(it);            
 
             break;
         }
@@ -30,8 +30,8 @@ void DeleteStaticObjCommand::Execute() {
     for (; it != objects.end(); it++) {
         if (*it == obj) {
             auto temp = it;
-            objects.erase(it);
-            //delete *temp;
+            delete *temp;
+            objects.erase(it);            
 
             break;
         }

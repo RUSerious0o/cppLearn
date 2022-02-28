@@ -15,6 +15,7 @@
 #include "CollisionDetector.h"
 #include "Visitor.h"
 #include "LandObjectObserver.h"
+#include "Mediator.h"
 
 
 class SBomber : public LandObjectObserver, public BombObserver {
@@ -56,5 +57,5 @@ private:
 
     CommandInterface commandInterface;
     BaseCollisionDetector collisionDetector;
-    LogVisitor logVisitor;
+    LogVisitor logVisitor;    
 };

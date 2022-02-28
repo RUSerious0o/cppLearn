@@ -1,12 +1,14 @@
 #include <iostream>
+#include <chrono>
 
 #include "LevelGUI.h"
 #include "MyTools.h"
+#include "Mediator.h"
 
 using namespace std;
 using namespace MyTools;
 
-void LevelGUI::Draw() const
+void LevelGUI::Draw() const 
 {
     MyTools::SetColor(CC_White);
 
@@ -40,6 +42,15 @@ void LevelGUI::Draw() const
     cout << "BombsNum: " << bombsNumber;
     GotoXY(62, 1);
     cout << "Score: " << score;
+
+    GotoXY(5, height + 2);
+    cout << "Tank: " << tankMessage;
+}
+
+void LevelGUI::CheckTankMessage() {
+    if (static_cast<int>(passedTime / 100) % 30 < 3) {
+        tankMessage = Mediator::getInstance().GetMessage();
+    }
 }
 
 void __fastcall LevelGUI::SetParam(uint64_t passedTimeNew, uint64_t fpsNew, uint16_t bombsNumberNew, int16_t scoreNew)

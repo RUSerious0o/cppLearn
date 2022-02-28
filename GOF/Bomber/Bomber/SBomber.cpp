@@ -2,6 +2,8 @@
 #include <conio.h>
 #include <windows.h>
 #include <memory>
+#include <cstdlib>
+#include <ctime>
 
 #include "MyTools.h"
 #include "SBomber.h"
@@ -17,6 +19,8 @@
 #include "RealBomb.h"
 #include "HouseDirector.h"
 #include "CollisionDetector.h"
+#include "ColorPlane.h"
+#include "BigPlane.h"
 
 using namespace std;
 using namespace MyTools;
@@ -31,7 +35,13 @@ SBomber::SBomber()
     bombsCount(10),
     score(0)
 {
-    plane = std::shared_ptr<Plane>(new Plane);
+    srand(time(0));
+    if (int rnd = rand() % 2 == 0) {
+        plane = std::shared_ptr<Plane>(new ColorPlane);
+    }
+    else {
+        plane = std::shared_ptr<Plane>(new BigPlane);
+    }    
     plane->SetDirection(1, 0.1);
     plane->SetSpeed(4);
     plane->SetPos(5, 10);
@@ -46,6 +56,7 @@ SBomber::SBomber()
     levelGUI->SetWidth(width);
     levelGUI->SetHeight(maxY - 4);
     levelGUI->SetFinishX(offset + width - 4);
+    Mediator::getInstance().Subscribe(levelGUI);
 
     ground = std::shared_ptr<Ground>(new Ground);    
     const uint16_t groundY = GetMaxY() - 5;
@@ -58,12 +69,14 @@ SBomber::SBomber()
     pTank->SetPos(42, groundY - 1);
     groundObjects.push_back(pTank);
     pTank->AddObserver(this);
+    Mediator::getInstance().Subscribe(pTank);
 
     TankAdapter* pTankAdapter = new TankAdapter;
     pTankAdapter->SetWidth(14);
     pTankAdapter->SetPos(10, groundY - 1);
     groundObjects.push_back(pTankAdapter);
     pTankAdapter->AddObserver(this);
+    Mediator::getInstance().Subscribe(pTankAdapter);
 
     HouseDirector houseDirector(new HouseBuilder_B(new House));
     House* pHouse = houseDirector.getHouse();
@@ -111,6 +124,7 @@ void SBomber::CheckObjects()
 {
     collisionDetector.CheckPlaneAndLevelGUI(plane, levelGUI, exitFlag);
     CheckBombLanding();
+    levelGUI->CheckTankMessage();
 };
 
 void SBomber::CheckBombLanding() {
