@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <algorithm>
 
 #include "DynamicObject.h"
 #include "GameObject.h"
@@ -24,9 +25,16 @@ public:
 		observers.push_back(observer);
 	}
 
+	void RemoveObserver(BombObserver* observer) override {
+		auto it = std::find(observers.begin(), observers.end(), observer);
+		if (it != observers.end()) {
+			observers.erase(it);
+		}
+	}
+
 	void Notify() override {
 		for (BombObserver* observer : observers) {
-			observer->HandleBombLanding(this);
+			observer->HandleBombLanding(this);			
 		}
 	}
 protected:
