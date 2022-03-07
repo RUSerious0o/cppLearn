@@ -168,6 +168,8 @@
     <ClInclude Include="Tank.h" />
     <ClInclude Include="TankAdaptee.h" />
     <ClInclude Include="TankAdapter.h" />
+    <ClInclude Include="Tree.h" />
+    <ClInclude Include="TreeState.h" />
     <ClInclude Include="Visitor.h" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +200,8 @@
     <ClCompile Include="Tank.cpp" />
     <ClCompile Include="TankAdaptee.cpp" />
     <ClCompile Include="TankAdapter.cpp" />
+    <ClCompile Include="Tree.cpp" />
+    <ClCompile Include="TreeState.cpp" />
     <ClCompile Include="Visitor.cpp" />
   </ItemGroup>
   <ItemGroup>

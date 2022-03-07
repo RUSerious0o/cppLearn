@@ -48,8 +48,17 @@ void LevelGUI::Draw() const
 }
 
 void LevelGUI::CheckTankMessage() {
-    if (static_cast<int>(passedTime / 100) % 30 < 3) {
+    if (static_cast<int>(passedTime / 1000) >= tankMsgTime) {
         tankMessage = Mediator::getInstance().GetMessage();
+        tankMsgTime += TANK_MSG_DELAY;
+    }
+}
+
+void LevelGUI::CheckTrees() {
+    if (static_cast<int>(passedTime / 1000) >= treesGrowTime) {
+        //tankMessage = Mediator::getInstance().GetMessage();
+        Mediator::getInstance().GrowTrees();
+        treesGrowTime += TREES_GROW_DELAY;
     }
 }
 
