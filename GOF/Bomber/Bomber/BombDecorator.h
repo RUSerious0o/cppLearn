@@ -9,6 +9,14 @@ public:
 	BombDecorator(Bomb* baseBomb) : baseBomb(baseBomb) {}
     ~BombDecorator() override { delete baseBomb; }
 
+    BombDecorator(const BombDecorator& base) {        
+        CopyFields(base);
+    }
+
+    BombDecorator& operator=(const BombDecorator& base) {
+        CopyFields(base);
+    }
+
 	void Draw() const override {
         baseBomb->Draw();
         MyTools::GotoXY(baseBomb->GetX(), baseBomb->GetY() - baseBomb->getHeight());
@@ -38,7 +46,26 @@ public:
     };
 
     int getHeight() override { return baseBomb->getHeight() + 1; }
+
+    BombDecorator* Clone() override {
+        return new BombDecorator(*this);
+    }
 private:	
 	const double SPEED_MULTIPLIER = 1.6;
     Bomb* baseBomb;
+
+    void CopyFields(const BombDecorator& base) {
+        baseBomb = base.baseBomb->Clone();
+
+        x = base.x;
+        y = base.y;
+        width = base.width;
+        speed = base.speed;
+        xDirction = base.xDirction;
+        yDirection = base.yDirection;
+
+        for (BombObserver* observer : base.observers) {
+            observers.push_back(observer);
+        }
+    }
 };

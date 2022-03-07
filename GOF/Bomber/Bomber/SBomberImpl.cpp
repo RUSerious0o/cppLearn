@@ -202,6 +202,18 @@ void SBomberImpl::ProcessKBHit()
 
         break;
 
+    case 'd':
+        if (bombsCount > 1) {            
+            Bomb* bomb = new BombDecorator(new RealBomb);
+            ProcessBomb(bomb);
+
+            Bomb* clonedBomb = bomb->Clone();
+            ProcessBomb(clonedBomb);
+            clonedBomb->SetPos(clonedBomb->GetX() + 3, clonedBomb->GetY());
+        }
+
+        break;
+
     default:
         break;
     }
