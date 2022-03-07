@@ -139,11 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BigPlane.h" />
     <ClInclude Include="Bomb.h" />
     <ClInclude Include="BombDecorator.h" />
     <ClInclude Include="BombIterator.h" />
     <ClInclude Include="BombObservable.h" />
     <ClInclude Include="BombObserver.h" />
+    <ClInclude Include="ColorPlane.h" />
     <ClInclude Include="LandObjectObservable.h" />
     <ClInclude Include="LandObjectObserver.h" />
     <ClInclude Include="CollisionDetector.h" />
@@ -156,6 +158,7 @@
     <ClInclude Include="HouseBuilder.h" />
     <ClInclude Include="HouseDirector.h" />
     <ClInclude Include="LevelGUI.h" />
+    <ClInclude Include="Mediator.h" />
     <ClInclude Include="MyTools.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="RealBomb.h" />
@@ -167,11 +170,13 @@
     <ClInclude Include="Visitor.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BigPlane.cpp" />
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="BombDecorator.cpp" />
     <ClCompile Include="BombIterator.cpp" />
     <ClCompile Include="BombObservable.cpp" />
     <ClCompile Include="BombObserver.cpp" />
+    <ClCompile Include="ColorPlane.cpp" />
     <ClCompile Include="LandObjectObservable.cpp" />
     <ClCompile Include="LandObjectObserver.cpp" />
     <ClCompile Include="CollisionDetector.cpp" />
@@ -182,6 +187,7 @@
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="House.cpp" />
     <ClCompile Include="LevelGUI.cpp" />
+    <ClCompile Include="Mediator.cpp" />
     <ClCompile Include="MyTools.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="RealBomb.cpp" />

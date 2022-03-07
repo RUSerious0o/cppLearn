@@ -8,6 +8,9 @@
 class Tank : public DestroyableGroundObject
 {
 public:
+	Tank();
+
+	virtual ~Tank();
 
 	virtual bool __fastcall isInside(double x1, double x2) const override;
 
@@ -15,8 +18,9 @@ public:
 
 	virtual void Draw() const override;
 
+	std::string GetMsg();
 private:
-	const uint16_t score = 30;
+	const uint16_t score = 30;	
 	static const std::vector<std::string> phrases;
 };
 
