@@ -23,6 +23,7 @@ public:
     void Draw() const override;
 
     void CheckTankMessage();
+    void CheckTrees();
 private:
     uint16_t height;
     uint16_t finishX = 109;
@@ -33,6 +34,12 @@ private:
 
     std::chrono::time_point<std::chrono::steady_clock> startTime;
     std::string tankMessage;
+
+    const int TANK_MSG_DELAY = 3;
+    int tankMsgTime = 0;
+
+    const int TREES_GROW_DELAY = 3;
+    int treesGrowTime = 4;
 };
 
 

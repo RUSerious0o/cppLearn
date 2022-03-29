@@ -22,6 +22,7 @@
 #include "ColorPlane.h"
 #include "BigPlane.h"
 #include "Mediator.h"
+#include "Tree.h"
 
 using namespace std;
 using namespace MyTools;
@@ -92,6 +93,12 @@ SBomberImpl::SBomberImpl()
     pHouse->SetPos(25, groundY - 1);
     groundObjects.push_back(pHouse);
     pHouse->AddObserver(this);
+
+    Tree* tree = new Tree;
+    tree->SetWidth(5);
+    tree->SetPos(4, groundY - 1);
+    groundObjects.push_back(tree);
+    Mediator::getInstance().Subscribe(tree);
 }
 
 SBomberImpl::~SBomberImpl() {
@@ -130,6 +137,7 @@ void SBomberImpl::CheckObjects()
     collisionDetector.CheckPlaneAndLevelGUI(plane, levelGUI, exitFlag);
     CheckBombLanding();
     levelGUI->CheckTankMessage();
+    levelGUI->CheckTrees();
 };
 
 void SBomberImpl::CheckBombLanding() {
@@ -190,6 +198,18 @@ void SBomberImpl::ProcessKBHit()
         if (bombsCount > 0) {
             Bomb* bomb = new BombDecorator(new BombDecorator(new RealBomb));
             ProcessBomb(bomb);
+        }
+
+        break;
+
+    case 'd':
+        if (bombsCount > 1) {            
+            Bomb* bomb = new BombDecorator(new RealBomb);
+            ProcessBomb(bomb);
+
+            Bomb* clonedBomb = bomb->Clone();
+            ProcessBomb(clonedBomb);
+            clonedBomb->SetPos(clonedBomb->GetX() + 3, clonedBomb->GetY());
         }
 
         break;
