@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>542</width>
-    <height>459</height>
+    <width>532</width>
+    <height>456</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>542</width>
+     <width>532</width>
      <height>20</height>
     </rect>
    </property>
@@ -55,7 +55,18 @@
     <addaction name="openFileAction"/>
     <addaction name="saveFileAction"/>
    </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Справка</string>
+    </property>
+    <addaction name="showHelpAction"/>
+    <addaction name="aboutProgramAction"/>
+   </widget>
    <addaction name="menu"/>
+   <addaction name="menu_2"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="openFileAction">
@@ -66,6 +77,16 @@
   <action name="saveFileAction">
    <property name="text">
     <string>Сохранить</string>
+   </property>
+  </action>
+  <action name="showHelpAction">
+   <property name="text">
+    <string>Показать справку</string>
+   </property>
+  </action>
+  <action name="aboutProgramAction">
+   <property name="text">
+    <string>О программе</string>
    </property>
   </action>
  </widget>

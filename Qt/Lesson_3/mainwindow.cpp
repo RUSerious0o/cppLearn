@@ -6,16 +6,22 @@
 #include <QDir>
 #include <QFile>
 #include <QTextStream>
+#include <QAction>
+#include <QMenu>
+
+#include "helpDialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , help(new HelpDialog(this))
 {
     ui->setupUi(this);
     resize(800,600);
 
     connect(ui->saveFileAction, &QAction::triggered, this, &MainWindow::onSaveFileActionTriggered);
     connect(ui->openFileAction, &QAction::triggered, this, &MainWindow::onOpenFileActionTriggered);
+    connect(ui->showHelpAction, &QAction::triggered, this, &MainWindow::onShowHelpTriggered);
 
     if(!QDir().exists(FILES_DEFAULT_DIR)) {
         QDir().mkdir(FILES_DEFAULT_DIR);
@@ -23,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 MainWindow::~MainWindow()
-{
+{    
     delete ui;
 }
 
@@ -53,4 +59,10 @@ void MainWindow::onOpenFileActionTriggered()
         file.close();
     }
 }
+
+void MainWindow::onShowHelpTriggered()
+{
+    help->show();
+}
+
 

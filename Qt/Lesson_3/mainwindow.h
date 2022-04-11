@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QString>
 
+class HelpDialog;
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -21,13 +23,15 @@ public:
 private slots:
     void onSaveFileActionTriggered();
     void onOpenFileActionTriggered();
+    void onShowHelpTriggered();
 
 private:
     Ui::MainWindow *ui;
+    HelpDialog *help;
 
-    QString SAVE_DIALOG_CAPTION = "Сохранить файл";
-    QString OPEN_DIALOG_CAPTION = "Открыть файл";
-    QString OPEN_SAVE_DIALOG_FILTER = "Текстовый файл (*.txt)";
-    QString FILES_DEFAULT_DIR = "./files";
+    const QString SAVE_DIALOG_CAPTION = "Сохранить файл";
+    const QString OPEN_DIALOG_CAPTION = "Открыть файл";
+    const QString OPEN_SAVE_DIALOG_FILTER = "Текстовый файл (*.txt)";
+    const QString FILES_DEFAULT_DIR = "./files";
 };
 #endif // MAINWINDOW_H
