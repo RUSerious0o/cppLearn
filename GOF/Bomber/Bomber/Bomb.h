@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <algorithm>
 
 #include "DynamicObject.h"
 #include "GameObject.h"
@@ -10,6 +11,8 @@
 
 class Bomb : public DynamicObject, public BombObservable {
 public:
+	virtual ~Bomb() {}
+
 	static const uint16_t BombCost = 10; // стоимость бомбы в очках
 
 	virtual void Draw() const {}
@@ -24,11 +27,20 @@ public:
 		observers.push_back(observer);
 	}
 
-	void Notify() override {
-		for (BombObserver* observer : observers) {
-			observer->HandleBombLanding(this);
+	void RemoveObserver(BombObserver* observer) override {
+		auto it = std::find(observers.begin(), observers.end(), observer);
+		if (it != observers.end()) {
+			observers.erase(it);
 		}
 	}
+
+	void Notify() override {
+		for (BombObserver* observer : observers) {
+			observer->HandleBombLanding(this);			
+		}
+	}	
+
+	virtual Bomb* Clone() = 0;
 protected:
 	std::vector<BombObserver*> observers;
 };

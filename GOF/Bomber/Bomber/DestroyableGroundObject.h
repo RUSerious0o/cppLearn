@@ -34,7 +34,7 @@ public:
         double rightBorder = this->GetX() + this->GetWidth() - 1;
         if ((x + radius > leftBorder) && (x + radius < rightBorder) ||
             (x - radius < rightBorder) && (x - radius > leftBorder)) {
-
+            
             this->Notify();
         }
     }

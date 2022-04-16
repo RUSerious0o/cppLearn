@@ -8,6 +8,7 @@
 #include "LevelGUI.h"
 #include "Tank.h"
 #include "Logger.cpp"
+#include "Tree.h"
 
 class Mediator {
 public:
@@ -22,6 +23,10 @@ public:
 
 	void Subscribe(std::shared_ptr<LevelGUI> gui) {
 		this->gui = gui;
+	}
+
+	void Subscribe(Tree* tree) {
+		trees.push_back(tree);
 	}
 
 	void Unsubscribe(Tank* tank) {
@@ -44,6 +49,12 @@ public:
 		return msg;
 	}
 
+	void GrowTrees() {
+		for (Tree* tree : trees) {
+			tree->Grow();
+		}
+	}
+
 private:
 	Mediator() {}
 	Mediator(const Mediator& base) = delete;
@@ -51,6 +62,7 @@ private:
 
 	std::vector<Tank*> tanks;
 	std::shared_ptr<LevelGUI> gui;
+	std::vector<Tree*> trees;
 
 	std::queue<std::string> messages;
 
