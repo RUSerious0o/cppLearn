@@ -33,6 +33,7 @@ private slots:
     void onShortcutsDialogShowAction();
     void onTranslationChangeTriggered();
     void onFileExplorerItemSelected(const QString& filePath);
+    void onChangeThemeTriggered();
 
 private:
     class ShortcutsEventFilter : public QObject
@@ -46,6 +47,8 @@ private:
 
     enum EditMode { ReadOnly, Normal };
 
+    enum Theme { Dark, Light };
+
 private:
     Ui::MainWindow *ui;
     HelpDialog *help;
@@ -54,6 +57,7 @@ private:
     QTranslator translator;
     QString currentTranslation;
     FileExplorer *fileExplorer;
+    Theme currentTheme;
 
     const QString SAVE_DIALOG_CAPTION = "Сохранить файл";
     const QString OPEN_DIALOG_CAPTION = "Открыть файл";
@@ -63,9 +67,17 @@ private:
     const QString RUSSIAN_TR = "./QtLanguage_ru";
     const QString ENGLISH_HELP = ":/help/help_en.txt";
     const QString RUSSIAN_HELP = ":/help/help.txt";
+    const QString DARK_THEME = ":/Qss/dark.qss";
+    const QString LIGHT_THEME = ":/Qss/light.qss";
 
     void setMode(EditMode mode);
     void setTranslation(QString translation);
     void expandCurrentDirectory();
+
+    std::map<Theme, QString> themes {
+        { Dark,  DARK_THEME},
+        { Light, LIGHT_THEME}
+    };
+    void setTheme(Theme theme);
 };
 #endif // MAINWINDOW_H

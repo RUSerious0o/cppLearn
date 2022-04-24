@@ -58,6 +58,7 @@
     </property>
     <addaction name="shortcutsPrefsAction"/>
     <addaction name="translationChangeAction"/>
+    <addaction name="changeThemeAction"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_3"/>
@@ -108,6 +109,11 @@
   <action name="translationChangeAction">
    <property name="text">
     <string>Сменить язык интерфейса</string>
+   </property>
+  </action>
+  <action name="changeThemeAction">
+   <property name="text">
+    <string>Сменить тему</string>
    </property>
   </action>
  </widget>

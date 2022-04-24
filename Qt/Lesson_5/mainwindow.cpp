@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     , help(new HelpDialog(this))
     , shortcutsDialog(new ShortcutsPrefsDialog(this))
     , shortcutsEventFilter(new ShortcutsEventFilter)
+    , currentTheme(Dark)
 {
     ui->setupUi(this);
     resize(1024,768);
@@ -50,6 +51,9 @@ MainWindow::MainWindow(QWidget *parent)
     fileExplorer = new FileExplorer(this);
     ui->hLayout->insertWidget(0, fileExplorer, 2);
     connect(fileExplorer, &FileExplorer::itemSelected, this, &MainWindow::onFileExplorerItemSelected);
+
+    connect(ui->changeThemeAction, &QAction::triggered, this, &MainWindow::onChangeThemeTriggered);
+    setTheme(currentTheme);
 }
 
 MainWindow::~MainWindow()
@@ -137,6 +141,16 @@ void MainWindow::onFileExplorerItemSelected(const QString &filePath)
     }
 }
 
+void MainWindow::onChangeThemeTriggered()
+{
+    if(currentTheme == Dark) {
+        currentTheme = Light;
+    } else {
+        currentTheme = Dark;
+    }
+    setTheme(currentTheme);
+}
+
 
 
 void MainWindow::setMode(EditMode mode)
@@ -155,6 +169,16 @@ void MainWindow::setTranslation(QString translation)
     translator.load(translation);
     qApp->installTranslator(&translator);
     ui->retranslateUi(this);
+}
+
+void MainWindow::setTheme(Theme theme)
+{
+    QFile file(themes[theme]);
+    if(file.open(QFile::ReadOnly | QFile::ExistingOnly)) {
+        QTextStream text(&file);
+        qApp->setStyleSheet(text.readAll());
+        file.close();
+    }
 }
 
 
@@ -191,6 +215,11 @@ bool MainWindow::ShortcutsEventFilter::eventFilter(QObject *obj, QEvent *event) 
 
         if(keyEvent->key() == Qt::Key_L && keyEvent->modifiers() == Qt::ControlModifier) {
             mainWindow->onTranslationChangeTriggered();
+            return true;
+        }
+
+        if(keyEvent->key() == Qt::Key_T && keyEvent->modifiers() == Qt::ControlModifier) {
+            mainWindow->onChangeThemeTriggered();
             return true;
         }
     }

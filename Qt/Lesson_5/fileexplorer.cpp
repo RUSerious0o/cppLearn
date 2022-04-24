@@ -29,9 +29,10 @@ FileExplorer::FileExplorer(QWidget *parent) : QWidget(parent),
     model->setNameFilters({ "*.txt" });
     model->setNameFilterDisables(false);
 
-    for(int i = 1; i <= 3; ++i) {
+    for(int i = 1; i < model->columnCount(); ++i) {
         treeView->hideColumn(i);
     }
+    treeView->setHeaderHidden(true);
 
     expandCurrentDirectory();
 
