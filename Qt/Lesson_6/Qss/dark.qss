@@ -1,0 +1,49 @@
+QMainWindow {
+    background-color: #444444;
+}
+
+QTextEdit, QLineEdit, QTreeView {
+    background : black;
+    alternate-background-color: black;
+    color : #D8D8D8;
+}
+
+QTreeView::item:selected {
+    background : qlineargradient(x1 : 0, y1 : 0, x2 : 1, y2 : 1, stop : 0 #7F7F7F, stop : 1 #262626);
+    color : #D8D8D8;
+}
+
+QLineEdit {
+    border-style : inset;
+    border-color : #8E8E8E;
+    border-width : 1px;
+}
+
+QMenuBar {
+    background-color : qlineargradient(x1 : 0, y1 : 0, x2 : 1, y2 : 1, stop : 0 #262626, stop : 1 #B7B7B7);
+    color : #D8D8D8;
+}
+
+QMenuBar::item:selected {
+    background : qlineargradient(x1 : 0, y1 : 0, x2 : 1, y2 : 1, stop : 0 #B7B7B7, stop : 1 #262626);
+    color : #D8D8D8;
+}
+
+QMenu {
+    background : #494949;
+    color : #D8D8D8;
+}
+
+QMenu::item:selected {
+    background : #606060;
+    color : #D8D8D8;
+}
+
+ShortcutsPrefsDialog,
+ShortcutsPrefsDialog QGroupBox,
+ShortcutsPrefsDialog QRadioButton,
+HelpDialog,
+HelpDialog QLabel {
+    background : #444444;
+    color : #D8D8D8;
+}
