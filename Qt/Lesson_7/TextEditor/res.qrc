@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>help/help.txt</file>
+        <file>help/help_en.txt</file>
+        <file>Qss/dark.qss</file>
+        <file>Qss/light.qss</file>
+        <file>icons/font_icon.png</file>
+        <file>icons/font_copy_icon.png</file>
+        <file>icons/font_paste_icon.png</file>
+        <file>icons/text_align_center_icon.png</file>
+        <file>icons/text_align_left_icon.png</file>
+        <file>icons/text_align_right_icon.png</file>
+    </qresource>
+</RCC>
