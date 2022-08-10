@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/arrow.png</file>
+        <file>CustomButton.qml</file>
+        <file>InputInterface.qml</file>
+    </qresource>
+</RCC>
