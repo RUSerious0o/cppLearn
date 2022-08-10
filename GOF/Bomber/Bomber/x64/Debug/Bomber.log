@@ -1,0 +1,3 @@
+﻿  SBomberImpl.cpp
+G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\Bomber\SBomberImpl.cpp(40,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Bomber.vcxproj -> G:\1. Хранилище\10.Cpp-repo\cppLearn\GOF\Bomber\x64\Debug\Bomber.exe
