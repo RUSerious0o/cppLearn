@@ -1,0 +1,12 @@
+debug/fileexplorer.o
+debug/filesearchdialog.o
+debug/helpDialog.o
+debug/main.o
+debug/mainwindow.o
+debug/shortcutsprefsdialog.o
+debug/qrc_res.o
+debug/moc_fileexplorer.o
+debug/moc_filesearchdialog.o
+debug/moc_helpDialog.o
+debug/moc_mainwindow.o
+debug/moc_shortcutsprefsdialog.o
