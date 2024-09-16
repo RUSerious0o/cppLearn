@@ -1,0 +1,12 @@
+release/fileexplorer.o
+release/filesearchdialog.o
+release/helpDialog.o
+release/main.o
+release/mainwindow.o
+release/shortcutsprefsdialog.o
+release/qrc_res.o
+release/moc_fileexplorer.o
+release/moc_filesearchdialog.o
+release/moc_helpDialog.o
+release/moc_mainwindow.o
+release/moc_shortcutsprefsdialog.o
